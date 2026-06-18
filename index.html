@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Violencia Psicológica</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    /* IMAGEN DE FONDO */
+    background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3');
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* CAPA OSCURA */
+
+.capa{
+    background:rgba(0,0,0,0.78);
+    min-height:100vh;
+    padding:20px;
+}
+
+/* TITULO */
+
+h1{
+
+    text-align:center;
+    color:red;
+    font-size:70px;
+    margin-top:20px;
+
+    text-shadow:
+    0px 0px 10px white,
+    0px 0px 20px red,
+    0px 0px 40px red,
+    0px 0px 60px red;
+
+    animation:brillo 1.5s infinite alternate;
+}
+
+@keyframes brillo{
+
+    from{
+        text-shadow:0px 0px 15px red;
+    }
+
+    to{
+        text-shadow:
+        0px 0px 25px white,
+        0px 0px 50px red,
+        0px 0px 80px red;
+    }
+}
+
+/* MENU PRINCIPAL */
+
+.menu{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:70px;
+    gap:25px;
+}
+
+.menu button{
+
+    width:380px;
+    padding:22px;
+    border:none;
+    border-radius:20px;
+    font-size:28px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.menu button:hover{
+
+    transform:scale(1.08);
+}
+
+/* COLORES */
+
+.inicio{background:#3498db;}
+.historia{background:#9b59b6;}
+.senales{background:#e67e22;}
+.ayuda{background:#27ae60;}
+.contacto{background:#e74c3c;}
+
+/* VENTANAS */
+
+.ventana{
+
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:auto;
+    background:rgba(0,0,0,0.92);
+    padding:40px;
+}
+
+.contenido{
+
+    background:white;
+    max-width:1000px;
+    margin:auto;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0px 0px 20px black;
+}
+
+.contenido h2{
+
+    text-align:center;
+    color:#c0392b;
+    font-size:45px;
+    margin-bottom:25px;
+}
+
+.contenido p{
+
+    font-size:22px;
+    line-height:1.8;
+    text-align:justify;
+}
+
+/* BOTONES SECUNDARIOS */
+
+.submenu{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
+}
+
+.submenu button{
+
+    padding:15px 25px;
+    border:none;
+    border-radius:15px;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.submenu button:hover{
+
+    transform:scale(1.1);
+}
+
+/* COLORES SECUNDARIOS */
+
+.dudas{background:#16a085;}
+.culpa{background:#f39c12;}
+.miedo{background:#8e44ad;}
+.soledad{background:#2c3e50;}
+
+.confusion{background:#1abc9c;}
+.aislamiento{background:#34495e;}
+.desesperanza{background:#c0392b;}
+
+/* IMAGEN */
+
+.imagen{
+
+    width:100%;
+    border-radius:20px;
+    margin-top:25px;
+}
+
+/* CAJAS AYUDA */
+
+.caja{
+
+    padding:25px;
+    margin-top:20px;
+    border-radius:20px;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+
+    animation:cambio 5s infinite alternate;
+}
+
+.c1{
+    background:linear-gradient(to right,#0f2027,#2c5364);
+}
+
+.c2{
+    background:linear-gradient(to right,#134e5e,#71b280);
+}
+
+.c3{
+    background:linear-gradient(to right,#42275a,#734b6d);
+}
+
+.c4{
+    background:linear-gradient(to right,#ff512f,#dd2476);
+}
+
+@keyframes cambio{
+
+    from{
+        filter:brightness(60%);
+    }
+
+    to{
+        filter:brightness(140%);
+    }
+}
+
+/* BOTON CERRAR */
+
+.cerrar{
+
+    margin-top:30px;
+    padding:15px 30px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:12px;
+    font-size:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.cerrar:hover{
+
+    background:darkred;
+}
+
+
+.tarjeta{
+background:#f8f9fa;
+border-left:6px solid #c0392b;
+padding:20px;
+margin-top:15px;
+border-radius:15px;
+transition:.3s;
+}
+.tarjeta:hover{
+transform:scale(1.03);
+}
+.estadistica{
+display:inline-block;
+width:220px;
+margin:10px;
+padding:20px;
+background:#2c3e50;
+color:white;
+border-radius:15px;
+font-size:20px;
+font-weight:bold;
+text-align:center;
+}
+.frasefinal{
+margin-top:25px;
+padding:25px;
+background:#c0392b;
+color:white;
+font-size:26px;
+text-align:center;
+border-radius:20px;
+font-weight:bold;
+}
+
+
+footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.85);
+    color:white;
+    text-align:center;
+    padding:10px;
+    font-size:18px;
+    z-index:9999;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="capa">
+
+<h1>VIOLENCIA PSICOLÓGICA</h1>
+
+
+<div class="menu">
+
+<button class="inicio" onclick="abrir('inicio')">
+INICIO
+</button>
+
+<button class="historia" onclick="abrir('historia')">
+HISTORIA
+</button>
+
+<button class="ayuda" onclick="abrir('importancia')">
+IMPORTANCIA
+</button>
+
+<button class="senales" onclick="abrir('senales')">
+SEÑALES
+</button>
+
+<button class="historia" onclick="abrir('consecuencias')">
+CONSECUENCIAS
+</button>
+
+<button class="senales" onclick="abrir('mitos')">
+MITOS Y REALIDADES
+</button>
+
+<button class="ayuda" onclick="abrir('ayuda')">
+AYUDA
+</button>
+
+<button class="ayuda" onclick="abrir('prevencion')">
+PREVENCIÓN
+</button>
+
+<button class="historia" onclick="abrir('videoInfo')">
+VIDEO INFORMATIVO
+</button>
+
+<button class="contacto" onclick="abrir('contacto')">
+CONTACTO
+</button>
+
+<button class="senales" onclick="abrir('cuestionario')">
+¿QUÉ APRENDISTE?
+</button>
+
+<button class="inicio" onclick="abrir('bibliografia')">
+BIBLIOGRAFÍA
+</button>
+
+</div>
+
+
+</div>
+
+<!-- INICIO -->
+
+<div id="inicio" class="ventana">
+
+<div class="contenido">
+
+<h2>Inicio</h2><img class="imagen" src="ImagenesLeo/violencia_psicologica.jpg" alt="Violencia psicológica">
+
+<p>
+Hola, mi nombre es Alan. Durante mucho tiempo pensé que la violencia
+solo eran los golpes, pero descubrí que las palabras también pueden
+dejar heridas profundas. Vivir entre insultos, amenazas, humillaciones
+y manipulaciones hizo que poco a poco dejara de confiar en mí mismo.
+Llegué a sentir miedo, culpa, dudas y una profunda soledad.
+Por eso decidí compartir esta información, para que otras personas
+puedan reconocer las señales de la violencia psicológica y sepan que no están solas.
+</p>
+
+<table style="width:100%;margin-top:25px;border-collapse:collapse;font-size:20px;">
+<tr style="background:#c0392b;color:white;">
+<th style="padding:12px;border:1px solid #ddd;">Emoción</th>
+<th style="padding:12px;border:1px solid #ddd;">¿Cómo se siente?</th>
+</tr>
+<tr><td style="padding:10px;border:1px solid #ddd;">Dudas</td><td style="padding:10px;border:1px solid #ddd;">La persona deja de confiar en sí misma.</td></tr>
+<tr><td style="padding:10px;border:1px solid #ddd;">Culpa</td><td style="padding:10px;border:1px solid #ddd;">Cree que todo es su responsabilidad.</td></tr>
+<tr><td style="padding:10px;border:1px solid #ddd;">Miedo</td><td style="padding:10px;border:1px solid #ddd;">Vive con ansiedad y preocupación constante.</td></tr>
+<tr><td style="padding:10px;border:1px solid #ddd;">Soledad</td><td style="padding:10px;border:1px solid #ddd;">Se aleja de familiares y amigos.</td></tr>
+</table>
+
+<div style="text-align:center;margin-top:20px;">
+<div class="estadistica">🧠 Daño emocional progresivo</div>
+<div class="estadistica">⚠️ Puede pasar desapercibida</div>
+<div class="estadistica">🤝 Buscar ayuda funciona</div>
+</div>
+
+<div class="submenu">
+
+<button class="dudas" onclick="abrir('dudas')">
+Dudas
+</button>
+
+<button class="culpa" onclick="abrir('culpaInicio')">
+Culpa
+</button>
+
+<button class="miedo" onclick="abrir('miedoInicio')">
+Miedo
+</button>
+
+<button class="soledad" onclick="abrir('soledad')">
+Soledad
+</button>
+
+</div>
+
+<center>
+<button class="cerrar" onclick="cerrar('inicio')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- DUDAS -->
+
+<div id="dudas" class="ventana">
+
+<div class="contenido">
+
+<h2>Dudas</h2>
+
+<p>
+La víctima comienza a dudar de sí misma,
+de sus decisiones y pensamientos debido a la manipulación emocional.
+<br><br>
+Cuando alguien recibe críticas, burlas o descalificaciones constantes,
+puede comenzar a creer que no es capaz de tomar buenas decisiones.
+Esto afecta la confianza personal y la independencia emocional.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('dudas')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- CULPA -->
+
+<div id="culpaInicio" class="ventana">
+
+<div class="contenido">
+
+<h2>Culpa</h2>
+
+<p>
+Muchas personas sienten culpa por problemas que realmente
+no provocaron debido a las constantes acusaciones del agresor.
+<br><br>
+La culpa suele utilizarse para controlar a la víctima y hacerla sentir
+responsable de problemas que en realidad no dependen de ella.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('culpaInicio')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- MIEDO -->
+
+<div id="miedoInicio" class="ventana">
+
+<div class="contenido">
+
+<h2>Miedo</h2>
+
+<p>
+Las amenazas y humillaciones generan miedo constante,
+provocando ansiedad y estrés emocional.
+<br><br>
+El miedo constante puede afectar el rendimiento escolar,
+las relaciones personales y la salud mental.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('miedoInicio')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- SOLEDAD -->
+
+<div id="soledad" class="ventana">
+
+<div class="contenido">
+
+<h2>Soledad</h2>
+
+<p>
+La víctima puede aislarse de amigos y familiares,
+provocando sentimientos de tristeza y abandono.
+<br><br>
+Muchas personas se aíslan porque creen que nadie las entenderá,
+lo que dificulta que pidan ayuda a tiempo.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('soledad')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- HISTORIA -->
+
+<div id="historia" class="ventana">
+
+<div class="contenido">
+
+<h2>Historia de Alan</h2>
+
+<p>
+Mi nombre es Alan y durante mucho tiempo sufrí violencia psicológica.
+Las palabras hirientes y amenazas destruyeron mi confianza.
+Me sentía solo, confundido y sin esperanza.
+
+Después de una fuerte crisis emocional terminé en un hospital,
+donde comprendí que necesitaba ayuda profesional.
+Con apoyo psicológico y el cariño de mi familia
+logré superar el miedo y recuperar mi vida.
+
+Hoy comparto mi historia para demostrar que siempre existe
+una oportunidad para salir adelante y buscar ayuda.
+
+<br><br>
+<b>¿Cómo me sentía?</b><br><br>
+Me sentía atrapado. Aunque no tenía heridas visibles, por dentro estaba cansado,
+confundido y triste. Cada crítica me hacía sentir menos valioso y cada amenaza aumentaba mi miedo.
+Con el tiempo comprendí que nadie merece vivir así y que pedir ayuda es un acto de valentía.
+</p>
+
+<img class="imagen"
+src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3"
+alt="Cama de hospital">
+
+<center>
+<button class="cerrar" onclick="cerrar('historia')">
+Cerrar
+</button>
+</center>
+
+
+<h3 style="margin-top:30px;color:#c0392b;">📍 Mi proceso</h3>
+
+<div class="tarjeta"><b>1. Comenzó poco a poco</b><br>
+Pensé que eran bromas o comentarios sin importancia.</div>
+
+<div class="tarjeta"><b>2. Perdí confianza en mí mismo</b><br>
+Comencé a dudar de mis capacidades y decisiones.</div>
+
+<div class="tarjeta"><b>3. Busqué ayuda</b><br>
+Comprendí que no debía enfrentar la situación solo.</div>
+
+<div class="tarjeta"><b>4. Recuperé mi bienestar</b><br>
+Con apoyo profesional y familiar pude salir adelante.</div>
+
+</div>
+
+</div>
+
+<!-- SEÑALES -->
+
+<div id="senales" class="ventana">
+
+<div class="contenido">
+
+<h2>Señales</h2><img class="imagen" src="ImagenesLeo/maltratoencasa.jpg" alt="Señales">
+
+<p>
+Muchas veces las señales aparecen poco a poco. La víctima puede pensar
+que todo es normal hasta que las emociones negativas comienzan a afectar
+su vida diaria, sus relaciones y su autoestima.
+</p>
+
+<table style="width:100%;margin-top:25px;border-collapse:collapse;font-size:20px;">
+<tr style="background:#c0392b;color:white;">
+<th style="padding:12px;border:1px solid #ddd;">Señal</th>
+<th style="padding:12px;border:1px solid #ddd;">Descripción</th>
+</tr>
+<tr><td style="padding:10px;border:1px solid #ddd;">Confusión</td><td style="padding:10px;border:1px solid #ddd;">Dificultad para confiar en los propios pensamientos.</td></tr>
+<tr><td style="padding:10px;border:1px solid #ddd;">Culpa</td><td style="padding:10px;border:1px solid #ddd;">Sentirse responsable de problemas ajenos.</td></tr>
+<tr><td style="padding:10px;border:1px solid #ddd;">Miedo</td><td style="padding:10px;border:1px solid #ddd;">Temor constante a equivocarse o ser juzgado.</td></tr>
+<tr><td style="padding:10px;border:1px solid #ddd;">Aislamiento</td><td style="padding:10px;border:1px solid #ddd;">Alejarse de amigos y familiares.</td></tr>
+<tr><td style="padding:10px;border:1px solid #ddd;">Desesperanza</td><td style="padding:10px;border:1px solid #ddd;">Pensar que nada puede mejorar.</td></tr>
+</table>
+
+<div class="submenu">
+
+<button class="confusion" onclick="abrir('confusion')">
+Confusión
+</button>
+
+<button class="culpa" onclick="abrir('culpa2')">
+Culpa
+</button>
+
+<button class="miedo" onclick="abrir('miedo2')">
+Miedo
+</button>
+
+<button class="aislamiento" onclick="abrir('aislamiento')">
+Aislamiento
+</button>
+
+<button class="desesperanza" onclick="abrir('desesperanza')">
+Desesperanza
+</button>
+
+</div>
+
+<center>
+<button class="cerrar" onclick="cerrar('senales')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- CONFUSION -->
+
+<div id="confusion" class="ventana">
+
+<div class="contenido">
+
+<h2>Confusión</h2>
+
+<p>
+La manipulación emocional hace que la víctima
+dude de su propia realidad y pensamientos.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('confusion')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- CULPA 2 -->
+
+<div id="culpa2" class="ventana">
+
+<div class="contenido">
+
+<h2>Culpa</h2>
+
+<p>
+El agresor puede hacer sentir culpable a la víctima
+por situaciones que no son responsabilidad suya.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('culpa2')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- MIEDO 2 -->
+
+<div id="miedo2" class="ventana">
+
+<div class="contenido">
+
+<h2>Miedo</h2>
+
+<p>
+Las amenazas constantes provocan miedo
+y afectan la estabilidad emocional.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('miedo2')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- AISLAMIENTO -->
+
+<div id="aislamiento" class="ventana">
+
+<div class="contenido">
+
+<h2>Aislamiento</h2>
+
+<p>
+La víctima se aleja de las personas cercanas,
+provocando sentimientos de soledad y tristeza.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('aislamiento')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- DESESPERANZA -->
+
+<div id="desesperanza" class="ventana">
+
+<div class="contenido">
+
+<h2>Desesperanza</h2>
+
+<p>
+La persona puede sentir que no existe solución,
+causando tristeza profunda y pérdida de motivación.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('desesperanza')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- AYUDA -->
+
+<div id="ayuda" class="ventana">
+
+<div class="contenido">
+
+<h2>Ayuda</h2>
+
+<div class="caja c1">
+1.- Habla con alguien.
+</div>
+
+<div class="caja c2">
+2.- Busca apoyo profesional.
+</div>
+
+<div class="caja c3">
+3.- Reconoce lo que sientes.
+</div>
+
+<div class="caja c4">
+4.- No te aísles. Mantén contacto con personas que te apoyen.
+</div>
+
+<div class="caja c1">
+5.- Recuerda que no estás solo. Siempre existen personas dispuestas a ayudarte.
+</div>
+
+<div class="caja c2">
+6.- Denuncia o busca apoyo institucional si tu seguridad emocional está en riesgo.
+</div>
+
+<p style="margin-top:25px;font-size:22px;">
+Reconocer la violencia psicológica es importante porque muchas veces no deja heridas visibles,
+pero puede afectar profundamente la autoestima, la confianza y la salud mental.
+Pedir ayuda es un acto de valentía.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('ayuda')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+<!-- CONTACTO -->
+
+<div id="contacto" class="ventana">
+
+<div class="contenido">
+
+<h2>Contacto</h2>
+
+<p>
+
+📞 Línea de ayuda: 800-123-4567<br><br>
+
+📧 Correo: ayuda@violencia.org<br><br>
+
+🌐 Página web: www.apoyopsicologico.org
+
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('contacto')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+
+<!-- IMPORTANCIA -->
+
+<div id="importancia" class="ventana">
+
+<div class="contenido">
+
+<h2>Importancia de reconocer la violencia psicológica</h2><img class="imagen" src="ImagenesLeo/violencia.jpg" alt="Importancia">
+
+<p>
+La violencia psicológica puede pasar desapercibida porque no deja marcas visibles.
+Sin embargo, sus consecuencias pueden durar mucho tiempo y afectar la autoestima,
+la seguridad y la salud emocional de una persona.
+<br><br>
+Reconocer las señales permite actuar a tiempo, buscar ayuda y prevenir problemas más graves.
+Hablar sobre este tema ayuda a construir relaciones más sanas, respetuosas y seguras.
+<br><br>
+Nadie merece vivir con miedo, humillaciones o manipulación. Informarse y apoyar a quienes lo necesitan
+es responsabilidad de todos.
+
+</p>
+
+<div class="frasefinal">
+❤️ Las heridas emocionales no siempre se ven, pero también necesitan atención, apoyo y comprensión.
+</div>
+
+<center>
+
+<button class="cerrar" onclick="cerrar('importancia')">
+Cerrar
+</button>
+</center>
+
+</div>
+
+</div>
+
+
+<!-- CONSECUENCIAS -->
+<div id="consecuencias" class="ventana">
+<div class="contenido">
+<h2>Consecuencias</h2><img class="imagen" src="ImagenesLeo/_129009274_maltrato01.jpg" alt="Consecuencias">
+<p>
+La violencia psicológica puede afectar seriamente la vida de una persona.
+Entre las consecuencias más comunes están la baja autoestima, ansiedad,
+estrés constante, dificultades escolares y problemas para relacionarse con otras personas.
+</p>
+
+<div class="tarjeta"><b>Baja autoestima</b><br>La persona pierde confianza en sí misma.</div>
+<div class="tarjeta"><b>Ansiedad</b><br>Preocupación y nerviosismo frecuentes.</div>
+<div class="tarjeta"><b>Estrés</b><br>Tensión emocional constante.</div>
+<div class="tarjeta"><b>Problemas escolares</b><br>Dificultad para concentrarse y aprender.</div>
+<div class="tarjeta"><b>Aislamiento social</b><br>Alejamiento de amigos y familiares.</div>
+
+<center><button class="cerrar" onclick="cerrar('consecuencias')">Cerrar</button></center>
+</div>
+</div>
+
+<!-- MITOS -->
+<div id="mitos" class="ventana">
+<div class="contenido">
+<h2>Mitos y Realidades</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:20px;">
+<tr style="background:#c0392b;color:white;">
+<th style="padding:12px;border:1px solid #ddd;">Mito</th>
+<th style="padding:12px;border:1px solid #ddd;">Realidad</th>
+</tr>
+<tr>
+<td style="padding:10px;border:1px solid #ddd;">Si no hay golpes, no hay violencia.</td>
+<td style="padding:10px;border:1px solid #ddd;">Las palabras y humillaciones también dañan.</td>
+</tr>
+<tr>
+<td style="padding:10px;border:1px solid #ddd;">Es algo normal.</td>
+<td style="padding:10px;border:1px solid #ddd;">No es normal ni saludable.</td>
+</tr>
+<tr>
+<td style="padding:10px;border:1px solid #ddd;">La víctima exagera.</td>
+<td style="padding:10px;border:1px solid #ddd;">Sus emociones y experiencias son reales.</td>
+</tr>
+</table>
+
+<center><button class="cerrar" onclick="cerrar('mitos')">Cerrar</button></center>
+</div>
+</div>
+
+
+<!-- VIDEO -->
+<div id="videoInfo" class="ventana">
+<div class="contenido">
+<h2>Video Informativo</h2>
+<p>Observa este video para comprender mejor la violencia psicológica.</p>
+<div style="text-align:center;margin-top:20px;">
+
+<a href="https://www.youtube.com/watch?v=dactQtfyrGE" target="_blank">
+<img src="https://img.youtube.com/vi/dactQtfyrGE/hqdefault.jpg"
+style="width:100%;border-radius:15px;cursor:pointer;box-shadow:0 0 15px #000;"
+alt="Video sobre violencia psicológica">
+</a>
+<p style="text-align:center;font-size:22px;margin-top:10px;">
+▶ Toca la imagen para abrir el video
+</p>
+
+
+<p style="margin-top:20px;font-size:20px;line-height:1.7;">
+Este video explica qué es la violencia psicológica, cómo identificarla y cuáles son sus consecuencias emocionales.
+Ayuda a comprender la importancia de reconocer las señales, prevenir este tipo de violencia y buscar apoyo cuando sea necesario.
+</p>
+
+<center><button class="cerrar" onclick="cerrar('videoInfo')">Cerrar</button></center>
+</div>
+</div>
+
+</div></div>
+
+<!-- PREVENCION -->
+<div id="prevencion" class="ventana">
+<div class="contenido">
+<h2>Prevención</h2>
+<div class="tarjeta"><b>Respetar a los demás</b></div>
+<div class="tarjeta"><b>Comunicar los problemas sin insultos</b></div>
+<div class="tarjeta"><b>Poner límites</b></div>
+<div class="tarjeta"><b>Buscar ayuda cuando sea necesario</b></div>
+<center><button class="cerrar" onclick="cerrar('prevencion')">Cerrar</button></center>
+</div>
+</div>
+
+<!-- TIPOS -->
+<div id="tipos" class="ventana">
+<div class="contenido">
+<h2>Tipos de violencia psicológica</h2>
+<div class="tarjeta">Humillaciones</div>
+<div class="tarjeta">Amenazas</div>
+<div class="tarjeta">Manipulación</div>
+<div class="tarjeta">Chantaje emocional</div>
+<div class="tarjeta">Aislamiento social</div>
+<center><button class="cerrar" onclick="cerrar('tipos')">Cerrar</button></center>
+</div>
+</div>
+
+<!-- CUESTIONARIO -->
+<div id="cuestionario" class="ventana">
+<div class="contenido">
+<h2>¿Qué aprendiste?</h2>
+<p>1. ¿La violencia psicológica deja heridas visibles?</p>
+<p>2. Menciona dos señales de violencia psicológica.</p>
+<p>3. ¿Qué debes hacer si la identificas?</p>
+<center><button class="cerrar" onclick="cerrar('cuestionario')">Cerrar</button></center>
+</div>
+</div>
+
+<!-- BIBLIOGRAFIA -->
+<div id="bibliografia" class="ventana">
+<div class="contenido">
+<h2>Fuentes consultadas</h2>
+<p>
+• Organización Mundial de la Salud (OMS)<br>
+• UNICEF<br>
+• Libros de Psicología<br>
+• Artículos educativos sobre violencia psicológica
+</p>
+<center><button class="cerrar" onclick="cerrar('bibliografia')">Cerrar</button></center>
+</div>
+</div>
+
+<script>
+
+function abrir(id){
+
+    document.getElementById(id).style.display = "block";
+}
+
+function cerrar(id){
+
+    document.getElementById(id).style.display = "none";
+}
+
+</script>
+
+
+<footer>
+Alan Leonardo Cortes Rodríguez 3-1
+</footer>
+
+</body>
+</html>
